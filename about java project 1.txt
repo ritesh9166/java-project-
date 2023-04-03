@@ -1,0 +1,28 @@
+This Java project is an implementation of face detection using OpenCV library. The project uses Haar-like features and Cascade Classifier to detect faces in a given image. Here is a brief explanation of the code:
+
+The project belongs to the "com.jfacedetection" package.
+
+First, the code loads the OpenCV library by calling "System.loadLibrary(Core.NATIVE_LIBRARY_NAME)".
+
+Next, it reads an image file "photo.jpg" using the "Imgcodecs.imread()" method.
+
+Then, it loads a Cascade Classifier model "lbpcascade_frontalface.xml" using the "CascadeClassifier()" constructor.
+
+After that, the code detects faces in the image using "cc.detectMultiScale(src, faceDetection)" method, which takes the input image and a MatOfRect object as parameters. The MatOfRect object is used to store the detected faces.
+
+The number of detected faces is printed using the "System.out.println()" method.
+
+Finally, for each detected face, the code draws a rectangle around it using "Imgproc.rectangle()" method. The output image is saved as "photo_out.jpg" using "Imgcodecs.imwrite()" method.
+
+At the end, a message is printed to indicate that the face detection process has finished.
+
+
+
+
+what is CascadeClassifier?
+
+CascadeClassifier is a class in the OpenCV library used for object detection. It is based on the Viola-Jones algorithm and uses a trained classifier cascade, which is essentially a series of classifiers that evaluate different features of an image.
+
+The CascadeClassifier can be used to detect objects of a specific type, such as faces, in an image or video stream. It works by scanning the image with a sliding window of various sizes and aspect ratios, and applying the classifier cascade to each window. If a window is classified as containing the target object, it is returned as a detection with a corresponding bounding box.
+
+In the given Java code, the CascadeClassifier is used to detect faces in an image by loading a pre-trained classifier from an XML file and applying it to the input image.
